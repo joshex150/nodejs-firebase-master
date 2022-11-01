@@ -56,4 +56,5 @@ app.delete("/delete/:id", async (req, res) => {
 });
 
 app.listen(process.env.PORT || 3001, () => console.log(`Up & Running ${process.env.PORT || 'localhost:3001'}`));
+
 // app.listen(3001, () => console.log(`Up & Running ${process.env.PORT || 'localhost:3001'}`));
