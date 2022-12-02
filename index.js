@@ -12,18 +12,10 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/create/:id", async (req, res) => {
-  try {
     const id = req.body.id;
     const response = await User.add(req.body, id).then(function (docRef) {
       User.doc(docRef.id).update({ id: docRef.id });
     });
-  } catch (error) {
-    res.send(error);
-    res.status(400).json({
-      success: false,
-      message: "Unsuccessful",
-    });
-  }
 });
 
 app.post("/update/:id", async (req, res) => {
